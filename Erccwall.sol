@@ -1,4 +1,4 @@
-pragma solidity ^0.8.6;
+pragma solidity =0.7.6;
 // SPDX-License-Identifier: MIT
 
 abstract contract Context {
@@ -105,11 +105,9 @@ library SafeMath {
      * _Available since v3.4._
      */
     function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
-        unchecked {
             uint256 c = a + b;
             if (c < a) return (false, 0);
             return (true, c);
-        }
     }
 
     /**
@@ -118,7 +116,7 @@ library SafeMath {
      * _Available since v3.4._
      */
     function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
-        unchecked {
+        {
             if (b > a) return (false, 0);
             return (true, a - b);
         }
@@ -130,7 +128,7 @@ library SafeMath {
      * _Available since v3.4._
      */
     function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
-        unchecked {
+        {
             // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
             // benefit is lost if 'b' is also tested.
             // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
@@ -147,7 +145,7 @@ library SafeMath {
      * _Available since v3.4._
      */
     function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
-        unchecked {
+        {
             if (b == 0) return (false, 0);
             return (true, a / b);
         }
@@ -159,7 +157,7 @@ library SafeMath {
      * _Available since v3.4._
      */
     function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
-        unchecked {
+        {
             if (b == 0) return (false, 0);
             return (true, a % b);
         }
@@ -251,7 +249,7 @@ library SafeMath {
      * - Subtraction cannot overflow.
      */
     function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        unchecked {
+        {
             require(b <= a, errorMessage);
             return a - b;
         }
@@ -274,7 +272,7 @@ library SafeMath {
      * - The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        unchecked {
+        {
             require(b > 0, errorMessage);
             return a / b;
         }
@@ -296,7 +294,7 @@ library SafeMath {
      * - The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        unchecked {
+        {
             require(b > 0, errorMessage);
             return a % b;
         }
